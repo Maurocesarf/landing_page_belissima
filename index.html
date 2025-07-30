@@ -10,12 +10,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <title>Bellissima</title>
+    <title>Belissima</title>
 </head>
 <body>
     <header>
         <nav id="navbar">
-            <i  id="nav_logo"> Bellissima</i>
+            <i  id="nav_logo"> Belissima</i>
 
             <ul id="nav_list">
                 <li class="nav-item active">
@@ -30,7 +30,7 @@
             </ul>
 
             <button class="btn-default">
-                Peça aqui
+                Faça seu pedido
             </button>
 
             <button id="mobile_btn">
@@ -44,7 +44,7 @@
                     <a href="#home">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#menu">Cardápio</a>
+                    <a href="#menu">Catálogo</a>
                 </li>
                 <li class="nav-item">
                     <a href="#testimonials">Avaliações</a>
@@ -52,7 +52,7 @@
             </ul>
 
             <button class="btn-default">
-                Peça aqui
+                Faça seu pedido
             </button>
         </div>
     </header>
@@ -62,25 +62,24 @@
             <div class="shape"></div>
             <div id="cta">
                 <h1 class="title">
-                    O sabor que vai até
-                    <span>você</span>
+                    Sua futura semijoia favorita
+                    <span>está aqui</span>
                 </h1>
 
                 <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur 
-                    adipiscing elit ut aliquam, purus sit amet
+                    Peças banhadas e hipoalergênicas
                 </p>
 
                 <div id="cta_buttons">
                     <a href="#" class="btn-default">
-                        Ver cardápio
+                        Ver catálogo
                     </a>
 
-                    <a href="tel:+55555555555" id="phone_button">
+                    <a href="tel:+5535998822874" id="phone_button">
                         <button class="btn-default">
                             <i class="fa-solid fa-phone"></i>
                         </button>
-                        (51) 92342-3243
+                        (35) 99882-2874
                     </a>
                 </div>
 
@@ -100,143 +99,77 @@
             </div>
 
             <div id="banner">
-                <img src="src/images/hero.png" alt="">
+                <img src="src/images/logo.svg" alt="">
             </div>
         </section>
 
         <section id="menu">
-            <h2 class="section-title">Cardápio</h2>
-            <h3 class="section-subtitle">Nossos pratos especiais</h3>
+            <h2 class="section-title">Catálogo</h2>
+            <h3 class="section-subtitle">Peças disponiveis</h3>
 
             <div id="dishes">
+            <script>
+            const pecas = [
+                {
+                nome: "Colar coração vazado",
+                descricao: "teste descricao colar.",
+                preco: "R$55,00",
+                imagem: "src/images/colar_coracao_vazado.jpg",
+                imagem2: "src/images/colar_coracao_vazado_2.jpg",
+                },
+                {
+                nome: "Colar flor",
+                descricao: "teste descricao colar flor.",
+                preco: "R$35,00",
+                imagem: "src/images/colar_flor.jpg",
+                imagem2: "",
+                },
+                {
+                nome: "Duo brinco borboleta",
+                descricao: "teste descricao duo brinco borboleta.",
+                preco: "R$18,00",
+                imagem: "src/images/duo_brinco_borboleta.jpg",
+                imagem2: "src/images/duo_brinco_borboleta_2.jpg",
+                },
+            ];
+
+            const container = document.getElementById("dishes");
+
+            pecas.forEach((peca) => {
+                container.innerHTML += `
                 <div class="dish">
                     <div class="dish-heart">
-                        <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-heart"></i>
                     </div>
+                    <div class="dish-images-scroll">
+                        <div class="scroll-container">
+                            <img src="${peca.imagem}" class="dish-image" alt="${peca.nome}">
+                            ${peca.imagem2 ? `<img src="${peca.imagem2}" alt="${peca.nome}" class="dish-image">` : ''}
+                        </div>
+                    </div>
+                    <h3 class="dish-title">${peca.nome}</h3>
 
-                    <img src="src/images/dish.png" class="dish-image" alt="">
-
-                    <h3 class="dish-title">
-                        Lorem Ipsum
-                    </h3>
-
-                    <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
+                    <span class="dish-description">${peca.descricao}</span>
 
                     <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span>(500+)</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span>(500+)</span>
                     </div>
 
                     <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
-                            <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
+                    <h4>${peca.preco}</h4>
+                    <button class="btn-default">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </button>
                     </div>
                 </div>
-
-                <div class="dish">
-                    <div class="dish-heart">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-
-                    <img src="src/images/dish2.png" class="dish-image" alt="">
-
-                    <h3 class="dish-title">
-                        Lorem Ipsum
-                    </h3>
-
-                    <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
-
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span>(500+)</span>
-                    </div>
-
-                    <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
-                            <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="dish">
-                    <div class="dish-heart">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-
-                    <img src="src/images/dish3.png" class="dish-image" alt="">
-
-                    <h3 class="dish-title">
-                        Lorem Ipsum
-                    </h3>
-
-                    <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
-
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span>(500+)</span>
-                    </div>
-
-                    <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
-                            <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="dish">
-                    <div class="dish-heart">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-
-                    <img src="src/images/dish4.png" class="dish-image" alt="">
-
-                    <h3 class="dish-title">
-                        Lorem Ipsum
-                    </h3>
-
-                    <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </span>
-
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span>(500+)</span>
-                    </div>
-
-                    <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
-                            <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+                `;
+            });
+            </script>
         </section>
 
         <section id="testimonials">
@@ -306,7 +239,7 @@
 
         <div id="footer_items">
             <span id="copyright">
-                &copy 2024 Larissa Kich
+                &copy 2025 Belissima by Bela
             </span>
 
             <div class="social-media-buttons">

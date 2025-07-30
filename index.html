@@ -11,11 +11,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <title>Belissima</title>
+    <script type="module" src="src/javascript/script.js"></script>
 </head>
 <body>
     <header>
         <nav id="navbar">
-            <i  id="nav_logo"> Belissima</i>
+            <a href="#home" id="nav_logo"> Belissima</a>
 
             <ul id="nav_list">
                 <li class="nav-item active">
@@ -71,7 +72,7 @@
                 </p>
 
                 <div id="cta_buttons">
-                    <a href="#" class="btn-default">
+                    <a href="#menu" class="btn-default">
                         Ver catálogo
                     </a>
 
@@ -109,33 +110,46 @@
 
             <div id="dishes">
             <script>
-            const pecas = [
+
+           // array de pecas para add na pagina
+           const pecas = [
                 {
+                id: 1,
                 nome: "Colar coração vazado",
                 descricao: "teste descricao colar.",
                 preco: "R$55,00",
                 imagem: "src/images/colar_coracao_vazado.jpg",
                 imagem2: "src/images/colar_coracao_vazado_2.jpg",
+                esgotado: false
                 },
                 {
+                id: 2,
                 nome: "Colar flor",
                 descricao: "teste descricao colar flor.",
                 preco: "R$35,00",
                 imagem: "src/images/colar_flor.jpg",
                 imagem2: "",
+                esgotado: false
                 },
                 {
+                id: 3,
                 nome: "Duo brinco borboleta",
                 descricao: "teste descricao duo brinco borboleta.",
                 preco: "R$18,00",
                 imagem: "src/images/duo_brinco_borboleta.jpg",
                 imagem2: "src/images/duo_brinco_borboleta_2.jpg",
+                esgotado: true
                 },
             ];
+            // fim do array
 
+            
             const container = document.getElementById("dishes");
 
             pecas.forEach((peca) => {
+
+                const estaEsgotado = peca.esgotado === true;
+
                 container.innerHTML += `
                 <div class="dish">
                     <div class="dish-heart">
@@ -146,6 +160,7 @@
                             <img src="${peca.imagem}" class="dish-image" alt="${peca.nome}">
                             ${peca.imagem2 ? `<img src="${peca.imagem2}" alt="${peca.nome}" class="dish-image">` : ''}
                         </div>
+                        ${estaEsgotado ? `<div class="label-esgotado">Esgotado</div>` : ''}
                     </div>
                     <h3 class="dish-title">${peca.nome}</h3>
 

@@ -66,6 +66,7 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   border-radius: 8px;
+  position: relative
 }
 
 .scroll-container {
@@ -81,6 +82,20 @@
   object-fit: cover;
   scroll-snap-align: start;
   border-radius: 8px;
+}
+
+.label-esgotado {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: rgba(255, 0, 0, 0.85);
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    pointer-events: none;
+    z-index: 10;
 }
 
 @media screen and (max-width: 1170px) {

@@ -15,6 +15,7 @@ header {
 }
 
 #nav_logo {
+    text-decoration: none;
     font-family: 'Great Vibes', cursive;
     font-size: 40px;
     color: var(--color-primary-6);

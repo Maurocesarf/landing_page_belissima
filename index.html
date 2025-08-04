@@ -51,10 +51,9 @@
                     <a href="#testimonials">Avaliações</a>
                 </li>
             </ul>
-
-            <button class="btn-default">
+            <a href="https://api.whatsapp.com/send?phone=5535998822874&text=Ol%C3%A1%2C+estou+interessado%28a%29+nas+semijoias+da+Bel%C3%ADssima.+Poderia+me+passar+mais+informa%C3%A7%C3%B5es%3F", target="_blank" class="btn-default">
                 Faça seu pedido
-            </button>
+            </a>
         </div>
     </header>
 
@@ -85,16 +84,12 @@
                 </div>
 
                 <div class="social-media-buttons">
-                    <a href="">
+                    <a href="https://api.whatsapp.com/send?phone=5535998822874&text=Ol%C3%A1%2C+estou+interessado%28a%29+nas+semijoias+da+Bel%C3%ADssima.+Poderia+me+passar+mais+informa%C3%A7%C3%B5es%3F", target="_blank">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
 
-                    <a href="">
+                    <a href="https://www.instagram.com/belissimabybela/", target="_blank">
                         <i class="fa-brands fa-instagram"></i>
-                    </a>
-
-                    <a href="">
-                        <i class="fa-brands fa-facebook"></i>
                     </a>
                 </div>
             </div>
@@ -106,9 +101,10 @@
 
         <section id="menu">
             <h2 class="section-title">Catálogo</h2>
+            <section id="menu-brincos">
             <h3 class="section-subtitle">Brincos</h3>
 
-            <div id="dishes">
+            <div id="card-brincos">
             <script>
 
            // array de pecas para add na pagina
@@ -177,29 +173,29 @@
             // fim do array
 
             
-            const container = document.getElementById("dishes");
+            const container = document.getElementById("card-brincos");
 
             brincos.forEach((brinco) => {
 
                 const estaEsgotado = brinco.esgotado === true;
 
                 container.innerHTML += `
-                <div class="dish">
-                    <div class="dish-heart">
+                <div class="card">
+                    <div class="card-heart">
                     <i class="fa-solid fa-heart"></i>
                     </div>
-                    <div class="dish-images-scroll">
+                    <div class="card-images-scroll">
                         <div class="scroll-container">
-                            <img src="${brinco.imagem}" class="dish-image" alt="${brinco.nome}">
-                            ${brinco.imagem2 ? `<img src="${brinco.imagem2}" alt="${brinco.nome}" class="dish-image">` : ''}
+                            <img src="${brinco.imagem}" class="card-image" alt="${brinco.nome}">
+                            ${brinco.imagem2 ? `<img src="${brinco.imagem2}" alt="${brinco.nome}" class="card-image">` : ''}
                         </div>
                         ${estaEsgotado ? `<div class="label-esgotado">Esgotado</div>` : ''}
                     </div>
-                    <h3 class="dish-title">${brinco.nome}</h3>
+                    <h3 class="card-title">${brinco.nome}</h3>
 
-                    <span class="dish-description">${brinco.descricao}</span>
+                    <span class="card-description">${brinco.descricao}</span>
 
-                    <div class="dish-rate">
+                    <div class="card-rate">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -207,7 +203,7 @@
                     <i class="fa-solid fa-star"></i>
                     </div>
 
-                    <div class="dish-price">
+                    <div class="card-price">
                     <h4>${brinco.preco}</h4>
                     <button class="btn-default">
                         <i class="fa-solid fa-basket-shopping"></i>
@@ -217,10 +213,11 @@
                 `;
             });
             </script>
-
+            </section>
+            <section id="menu-pulseiras">
             <h3 class="section-subtitle">Pulseiras</h3>
 
-            <div id="dishes">
+            <div id="card-pulseiras">
             <script>
 
            // array de pecas para add na pagina
@@ -269,29 +266,29 @@
             // fim do array
 
             
-            const container2 = document.getElementById("dishes");
+            const container2 = document.getElementById("card-pulseiras");
 
             pulseiras.forEach((pulseira) => {
 
                 const estaEsgotado = pulseira.esgotado === true;
 
-                container.innerHTML += `
-                <div class="dish">
-                    <div class="dish-heart">
+                container2.innerHTML += `
+                <div class="card">
+                    <div class="card-heart">
                     <i class="fa-solid fa-heart"></i>
                     </div>
-                    <div class="dish-images-scroll">
+                    <div class="card-images-scroll">
                         <div class="scroll-container">
-                            <img src="${pulseira.imagem}" class="dish-image" alt="${pulseira.nome}">
-                            ${pulseira.imagem2 ? `<img src="${pulseira.imagem2}" alt="${pulseira.nome}" class="dish-image">` : ''}
+                            <img src="${pulseira.imagem}" class="card-image" alt="${pulseira.nome}">
+                            ${pulseira.imagem2 ? `<img src="${pulseira.imagem2}" alt="${pulseira.nome}" class="card-image">` : ''}
                         </div>
                         ${estaEsgotado ? `<div class="label-esgotado">Esgotado</div>` : ''}
                     </div>
-                    <h3 class="dish-title">${pulseira.nome}</h3>
+                    <h3 class="card-title">${pulseira.nome}</h3>
 
-                    <span class="dish-description">${pulseira.descricao}</span>
+                    <span class="card-description">${pulseira.descricao}</span>
 
-                    <div class="dish-rate">
+                    <div class="card-rate">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -299,7 +296,7 @@
                     <i class="fa-solid fa-star"></i>
                     </div>
 
-                    <div class="dish-price">
+                    <div class="card-price">
                     <h4>${pulseira.preco}</h4>
                     <button class="btn-default">
                         <i class="fa-solid fa-basket-shopping"></i>
@@ -309,6 +306,7 @@
                 `;
             });
             </script>
+            </section>
         </section>
 
         <section id="testimonials">
@@ -382,16 +380,12 @@
             </span>
 
             <div class="social-media-buttons">
-                <a href="">
+                <a href="https://api.whatsapp.com/send?phone=5535998822874&text=Ol%C3%A1%2C+estou+interessado%28a%29+nas+semijoias+da+Bel%C3%ADssima.+Poderia+me+passar+mais+informa%C3%A7%C3%B5es%3F", target="_blank">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
 
-                <a href="">
+                <a href="https://www.instagram.com/belissimabybela/", target="_blank">
                     <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a href="">
-                    <i class="fa-brands fa-facebook"></i>
                 </a>
             </div>
         </div>

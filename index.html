@@ -26,13 +26,13 @@
                     <a href="#menu">Catálogo</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#testimonials">Avaliações</a>
+                    <a href="#testimonials">Sobre</a>
                 </li>
             </ul>
 
-            <button class="btn-default">
+            <a href="https://api.whatsapp.com/send?phone=5535998822874&text=Ol%C3%A1%2C+estou+interessado%28a%29+nas+semijoias+da+Bel%C3%ADssima.+Poderia+me+passar+mais+informa%C3%A7%C3%B5es%3F" target="_blank" class="btn-default">
                 Faça seu pedido
-            </button>
+            </a>
 
             <button id="mobile_btn">
                 <i class="fa-solid fa-bars"></i>
@@ -48,10 +48,10 @@
                     <a href="#menu">Catálogo</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#testimonials">Avaliações</a>
+                    <a href="#testimonials">Sobre</a>
                 </li>
             </ul>
-            <a href="https://api.whatsapp.com/send?phone=5535998822874&text=Ol%C3%A1%2C+estou+interessado%28a%29+nas+semijoias+da+Bel%C3%ADssima.+Poderia+me+passar+mais+informa%C3%A7%C3%B5es%3F", target="_blank" class="btn-default">
+            <a href="https://api.whatsapp.com/send?phone=5535998822874&text=Ol%C3%A1%2C+estou+interessado%28a%29+nas+semijoias+da+Bel%C3%ADssima.+Poderia+me+passar+mais+informa%C3%A7%C3%B5es%3F" target="_blank" class="btn-default">
                 Faça seu pedido
             </a>
         </div>
@@ -204,11 +204,9 @@
                     </div>
 
                     <div class="card-price">
-                    <h4>${brinco.preco}</h4>
-                    <button class="btn-default">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                    </button>
+                    <h3 class= "price-av">${brinco.preco_av} à vista</h3>
                     </div>
+                    <h5>1x ${brinco.preco} sem juros</h5>
                 </div>
                 `;
             });
@@ -297,10 +295,9 @@
                     </div>
 
                     <div class="card-price">
-                    <h4>${pulseira.preco}</h4>
-                    <button class="btn-default">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                    </button>
+                    <h3 class= "price-av">${pulseira.preco_av} à vista</h3>
+                    </div>
+                    <h5>1x ${pulseira.preco} sem juros</h5>
                     </div>
                 </div>
                 `;
@@ -309,67 +306,150 @@
             </section>
         </section>
 
-        <section id="testimonials">
-            <img src="src/images/chef.png" id="testimonial_chef" alt="">
+        <section id="menu-colares">
+            <h3 class="section-subtitle">Colares</h3>
 
-            <div id="testimonials_content">
-                <h2 class="section-title">
-                    Depoimentos
-                </h2>
-                <h3 class="section-subtitle">
-                    O que os clientes falam sobre nós
-                </h3>
+            <div id="card-colares">
+            <script>
 
-                <div id="feedbacks">
-                    <div class="feedback">
-                        <img src="src/images/avatar.png" class="feedback-avatar" alt="">
+           // array de pecas para add na pagina
+    const colares = [
+                {
+                id: 11,
+                nome: "Colar pedra rosa",
+                descricao: "Colar pedra rosa | Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
+                preco: "R$47,90",
+                preco_av: "R$45,60",
+                imagem: "src/images/colar_pedra_rosa.jpg",
+                imagem2: "src/images/colar_pedra_rosa_2.jpg",
+                esgotado: false
+                },
+                {
+                id: 12,
+                nome: "Colar lua cravejada",
+                descricao: "Colar lua cravejada | Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
+                preco: "R$50,90",
+                preco_av: "R$48,50",
+                imagem: "src/images/colar_lua_cravejada.jpg",
+                imagem2: "src/images/colar_lua_cravejada_2.jpg",
+                esgotado: false
+                },
+                {
+                id: 13,
+                nome: "Colar coração vazado",
+                descricao: "Colar coração vazado | Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
+                preco: "R$47,90",
+                preco_av: "R$45,60",
+                imagem: "src/images/colar_coracao_vazado.jpg",
+                imagem2: "src/images/colar_coracao_vazado_2.jpg",
+                esgotado: false
+                },
+                {
+                id: 14,
+                nome: "Colar trevo cristal",
+                descricao: "Colar trevo cristal | Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
+                preco: "R$47,90",
+                preco_av: "R$45,60",
+                imagem: "src/images/colar_trevo_cristal.jpg",
+                imagem2: "src/images/colar_trevo_cristal_2.jpg",
+                esgotado: false
+                },
+                {
+                id: 15,
+                nome: "Colar trevo verde",
+                descricao: "Colar trevo verde | Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
+                preco: "R$50,90",
+                preco_av: "R$48,50",
+                imagem: "src/images/colar_trevo_cristal.jpg",
+                imagem2: "src/images/colar_trevo_cristal_2.jpg",
+                esgotado: false
+                },
+                {
+                id: 16,
+                nome: "Colar infinito cravejado",
+                descricao: "Colar infinito cravejado | Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
+                preco: "R$47,90",
+                preco_av: "R$45,60",
+                imagem: "src/images/colar_infinito.jpg",
+                imagem2: "",
+                esgotado: false
+                },
+                {
+                id: 17,
+                nome: "Colar coração lilás",
+                descricao: "Colar coração lilás | Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
+                preco: "R$47,90",
+                preco_av: "R$45,60",
+                imagem: "src/images/colar_coracao_lilas.jpg",
+                imagem2: "",
+                esgotado: false
+                },
+                {
+                id: 18,
+                nome: "Colar flor",
+                descricao: "Colar flor | Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
+                preco: "R$47,90",
+                preco_av: "R$45,60",
+                imagem: "src/images/colar_flor.jpg",
+                imagem2: "",
+                esgotado: false
+                },
+]
+            // fim do array
 
-                        <div class="feedback-content">
-                            <p>
-                                Fulana de Tal
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                            </p>
-                            <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                            </p>
+            
+            const container3 = document.getElementById("card-colares");
+
+            colares.forEach((colar) => {
+
+                const estaEsgotado = colar.esgotado === true;
+
+                container3.innerHTML += `
+                <div class="card">
+                    <div class="card-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="card-images-scroll">
+                        <div class="scroll-container">
+                            <img src="${colar.imagem}" class="card-image" alt="${colar.nome}">
+                            ${colar.imagem2 ? `<img src="${colar.imagem2}" alt="${colar.nome}" class="card-image">` : ''}
                         </div>
+                        ${estaEsgotado ? `<div class="label-esgotado">Esgotado</div>` : ''}
+                    </div>
+                    <h3 class="card-title">${colar.nome}</h3>
+
+                    <span class="card-description">${colar.descricao}</span>
+
+                    <div class="card-rate">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                     </div>
 
-                    <div class="feedback">
-                        <img src="src/images/avatar.png" class="feedback-avatar" alt="">
-
-                        <div class="feedback-content">
-                            <p>
-                                Fulana de Tal
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                            </p>
-                            <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                            </p>
-                        </div>
+                    <div class="card-price">
+                    <h3 class= "price-av">${colar.preco_av} à vista</h3>
+                    </div>
+                    <h5>1x ${colar.preco} sem juros</h5>
                     </div>
                 </div>
-
-                <button class="btn-default">
-                    Ver mais avaliações
-                </button>
-            </div>
+                `;
+            });
+            </script>
+            </section>
         </section>
+
     </main>
+
+    <section>
+        <div id="cta">
+        <h1 class="title">
+        Visite nossas redes sociais e fique por dentro
+        <span>das novidades!</span>
+        </h1>
+    </div>
+    </section>
 
     <footer>
         <img src="src/images/wave.svg" alt="">

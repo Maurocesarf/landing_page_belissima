@@ -20,3 +20,58 @@ footer {
         gap: 20px;
     }
 }
+
+#sobre-nos {
+    background-color: #fdf6f9;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #5a2a3c;
+    border-top: 2px solid #e5c4cf;
+}
+
+#sobre-nos .container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#sobre-nos h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #a16b81;
+}
+
+#sobre-nos p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#sobre-nos ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#sobre-nos ul li {
+    margin-bottom: 15px;
+    font-size: 1em;
+    line-height: 1.5;
+    padding-left: 1em;
+    position: relative;
+}
+
+#sobre-nos ul li::before {
+    content: "•";
+    color: #a16b81;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+#sobre-nos .final {
+    font-weight: bold;
+    color: #d04c7b;
+    font-size: 1.2em;
+}

@@ -133,10 +133,14 @@
     #menu .section-subtitle {
         text-align: center;
     }
+
+    .card {
+        width: calc(100%);
+    }
 } 
 
 
-@media (min-width: 768px) {
+@media (min-width: 1170px) {
   #card-brincos,
   #card-pulseiras,
   #card-colares {

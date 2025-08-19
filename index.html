@@ -101,6 +101,67 @@
 
         <section id="menu">
             <h2 class="section-title">Catálogo</h2>
+            <section id="menu-aneis">
+            <h3 class="section-subtitle">Anéis</h3>
+
+            <div id="card-aneis">
+            <script>
+
+           // array de pecas para add na pagina
+            const aneis = [
+                {
+                id: 1,
+                nome: "Anel solitário - tamanho 21",
+                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
+                preco: "R$50,30",
+                preco_av: "R$47,80",
+                imagem: "src/images/anel_solitario_21.jpg",
+                imagem2: "",
+                esgotado: false
+                }
+            ];
+            // fim do array
+
+            
+            const container4 = document.getElementById("card-aneis");
+
+            aneis.forEach((anel) => {
+
+                const estaEsgotado = anel.esgotado === true;
+
+                container4.innerHTML += `
+                <div class="card">
+                    <div class="card-heart">
+                    <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="card-images-scroll">
+                        <div class="scroll-container">
+                            <img src="${anel.imagem}" class="card-image" alt="${anel.nome}">
+                            ${anel.imagem2 ? `<img src="${anel.imagem2}" alt="${anel.nome}" class="card-image">` : ''}
+                        </div>
+                        ${estaEsgotado ? `<div class="label-esgotado">Esgotado</div>` : ''}
+                    </div>
+                    <h3 class="card-title">${anel.nome}</h3>
+
+                    <span class="card-description">${anel.descricao}</span>
+
+                    <div class="card-rate">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="card-price">
+                    <h3 class= "price-av">${anel.preco_av} à vista</h3>
+                    </div>
+                    <h5>1x ${anel.preco} sem juros</h5>
+                </div>
+                `;
+            });
+            </script>
+            </section> 
             <section id="menu-brincos">
             <h3 class="section-subtitle">Brincos</h3>
 
@@ -111,13 +172,13 @@
             const brincos = [
                 {
                 id: 1,
-                nome: "Brinco 3 corações",
+                nome: "Conjunto coração lilás",
                 descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$37,90",
-                preco_av: "R$36,00",
-                imagem: "src/images/brinco_tres_coracoes.jpg",
-                imagem2: "src/images/brinco_tres_coracoes_2.jpg",
-                esgotado: true
+                preco: "R$69,50",
+                preco_av: "R$66,00",
+                imagem: "src/images/conjunto_coracao_lilas.jpg",
+                imagem2: "",
+                esgotado: false
                 },
                 {
                 id: 2,
@@ -150,26 +211,6 @@
                 esgotado: true
                 },
                 {
-                id: 5,
-                nome: "Brinco mini coração cravejado",
-                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$39,90",
-                preco_av: "R$37,90",
-                imagem: "src/images/brinco_mini_coracao_cravejado.jpg",
-                imagem2: "",
-                esgotado: true
-                },
-                {
-                id: 6,
-                nome: "Brinco borboleta vazado",
-                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$39,90",
-                preco_av: "R$37,90",
-                imagem: "src/images/brinco_borboleta_vazado.jpg",
-                imagem2: "src/images/brinco_borboleta_vazado_2.jpg",
-                esgotado: true
-                },
-                {
                 id: 7,
                 nome: "Trio de argolas hexagonais",
                 descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
@@ -177,16 +218,6 @@
                 preco_av: "R$48,00",
                 imagem: "src/images/trio_argolas_hexagonais.jpg",
                 imagem2: "src/images/trio_argolas_hexagonais_2.jpg",
-                esgotado: true
-                },
-                {
-                id: 8,
-                nome: "Trio de argolas cravejadas",
-                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$66,20",
-                preco_av: "R$62,90",
-                imagem: "src/images/trio_argolas_cravejadas.jpg",
-                imagem2: "",
                 esgotado: true
                 }
             ];
@@ -251,46 +282,6 @@
                 esgotado: true
                 },
                 {
-                id: 2,
-                nome: "Pulseira de bolinhas",
-                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$41,90",
-                preco_av: "R$39,90",
-                imagem: "src/images/pulseira_bolinhas.jpg",
-                imagem2: "",
-                esgotado: true
-                },
-                {
-                id: 3,
-                nome: "Pulseira elo corações",
-                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$41,90",
-                preco_av: "R$39,90",
-                imagem: "src/images/pulseira_elo_coracoes.jpg",
-                imagem2: "",
-                esgotado: true
-                },
-                {
-                id: 4,
-                nome: "Pulseira mini corações",
-                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$41,90",
-                preco_av: "R$39,90",
-                imagem: "src/images/pulseira_mini_coracoes.jpg",
-                imagem2: "",
-                esgotado: true
-                },
-                {
-                id: 5,
-                nome: "Pulseira coração cravejada",
-                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$41,90",
-                preco_av: "R$39,90",
-                imagem: "src/images/pulseira_coracao_cravejada.jpg",
-                imagem2: "src/images/pulseira_coracao_cravejada_2.jpg",
-                esgotado: true
-                },
-                {
                 id: 6,
                 nome: "Pulseira dupla coração + bolinhas",
                 descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
@@ -299,27 +290,7 @@
                 imagem: "src/images/pulseira_dupla_coracao_bolinhas.jpg",
                 imagem2: "src/images/pulseira_dupla_coracao_bolinhas_2.jpg",
                 esgotado: false
-                },
-                {
-                id: 7,
-                nome: "Pulseira dupla estrela + bolinhas",
-                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$41,90",
-                preco_av: "R$39,90",
-                imagem: "src/images/pulseira_dupla_estrela_bolinhas.jpg",
-                imagem2: "src/images/pulseira_dupla_estrela_bolinhas_2.jpg",
-                esgotado: true
-                }, 
-                {
-                id: 8,
-                nome: "Pulseira trevo branco",
-                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$41,90",
-                preco_av: "R$39,90",
-                imagem: "src/images/pulseira_trevo_branco.jpg",
-                imagem2: "src/images/pulseira_trevo_branco_2.jpg",
-                esgotado: true
-                },
+                }
 ]
             // fim do array
 
@@ -376,23 +347,23 @@
     const colares = [
                 {
                 id: 1,
-                nome: "Colar pedra rosa",
+                nome: "Colar pedras azuis",
                 descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$47,90",
-                preco_av: "R$45,60",
-                imagem: "src/images/colar_pedra_rosa.jpg",
-                imagem2: "src/images/colar_pedra_rosa_2.jpg",
-                esgotado: true
+                preco: "R$56,65",
+                preco_av: "R$53,80",
+                imagem: "src/images/colar_pedra_azuis.jpg",
+                imagem2: "",
+                esgotado: false
                 },
                 {
-                id: 2,
-                nome: "Colar lua cravejada",
+                id: 999,
+                nome: "Colar borboleta cravejada",
                 descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$50,90",
-                preco_av: "R$48,50",
-                imagem: "src/images/colar_lua_cravejada.jpg",
-                imagem2: "src/images/colar_lua_cravejada_2.jpg",
-                esgotado: true
+                preco: "R$56,65",
+                preco_av: "R$53,80",
+                imagem: "src/images/colar_borboleta_cravejada.jpg",
+                imagem2: "",
+                esgotado: false
                 },
                 {
                 id: 3,
@@ -410,8 +381,8 @@
                 descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
                 preco: "R$47,90",
                 preco_av: "R$45,60",
-                imagem: "src/images/colar_mini_coracoes.jpg",
-                imagem2: "src/images/colar_mini_coracoes_2.jpg",
+                imagem: "src/images/colar_mini_coracoes_2.jpg",
+                imagem2: "src/images/colar_mini_coracoes.jpg",
                 esgotado: false
                 },
                 {
@@ -422,16 +393,6 @@
                 preco_av: "R$45,60",
                 imagem: "src/images/colar_coracao_cravejado.jpg",
                 imagem2: "",
-                esgotado: true
-                },
-                {
-                id: 7,
-                nome: "Colar elo corações",
-                descricao: "Banhado a prata 50 milésimos, hipoalergênico, com dupla camada de verniz – brilho e proteção garantidos.",
-                preco: "R$47,90",
-                preco_av: "R$45,60",
-                imagem: "src/images/colar_elo_coracoes.jpg",
-                imagem2: "src/images/colar_elo_coracoes_2.jpg",
                 esgotado: true
                 },
                 {

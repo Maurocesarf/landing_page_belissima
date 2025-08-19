@@ -1,7 +1,8 @@
 #menu,
 #menu-pulseiras,
 #menu-brincos,
-#menu-colares {
+#menu-colares,
+#menu-aneis {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +13,8 @@
 
 #card-brincos,
 #card-pulseiras,
-#card-colares {
+#card-colares,
+#card-aneis {
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -113,7 +115,8 @@
 @media screen and (max-width: 1170px) {
     #card-brincos,
     #card-pulseiras,
-    #card-colares {
+    #card-colares,
+    #card-aneis {
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -126,7 +129,8 @@
 @media screen and (max-width: 700px) {
     #card-brincos,
     #card-pulseiras,
-    #card-colares {
+    #card-colares,
+    #card-aneis {
         width: 100%;
     }
 
@@ -143,7 +147,8 @@
 @media (min-width: 1170px) {
   #card-brincos,
   #card-pulseiras,
-  #card-colares {
+  #card-colares,
+  #card-aneis {
     justify-content: center;
     overflow-x: visible;
     flex-wrap: wrap;
